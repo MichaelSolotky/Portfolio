@@ -1,0 +1,71 @@
+\documentclass[10pt]{extarticle}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{array}
+\usepackage{beamerarticle}
+\usepackage{booktabs}
+\usepackage{filecontents}
+\usepackage{float}
+\usepackage{fontawesome}
+\usepackage{fullpage}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{indentfirst}
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+
+\begin{filecontents*}{trial.bib}
+ @article{paper,
+author={name},
+title="{title}",
+journal={J. Phys. Conf. Ser.},
+volume={67},
+number={},
+ pages={23},
+ year={2007}
+ }
+\end{filecontents*}
+
+\geometry{
+    a4paper,
+    total={170mm,257mm},
+    left=20mm,
+    top=20mm,
+}
+
+\newcommand{\Expect}{\mathsf{E}}
+\newcommand{\MExpect}{\mathsf{M}}
+\newcommand{\RomanNumeralCaps}[1]{\MakeUppercase{\romannumeral #1}}
+
+\definecolor{linkcolor}{HTML}{0000FF} % цвет ссылок
+\definecolor{urlcolor}{HTML}{0000FF} % цвет гиперссылок
+ 
+\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
+
+\title{Название}
+\author{Солоткий Михаил, 417 группа ВМК МГУ}
+
+\begin{document}
+\maketitle
+    \section*{Список вопросов, выносимых на зачёт (2017 год)}
+    \section{Список вопросов, выносимых на зачёт (2017 год)}
+
+    \cite{paper}
+
+    \bibliographystyle{unsrt}
+    \bibliography{trial}
+
+    Consider 2 random variables : c is the true class of the object, k is the number of assessors, who labeled the object as class 1.
+
+    $P(k = m | c = 1) = C_n^m  q^{n - m}  (1 - q)^{m}$, i.e. there are m correct answers and n - m wrong answers
+    $P(k = m | c != 1) = C_n^m  q^{m}  (1 - q)^{n - m}$, i.e. there are m wrong and n - m correct answers.
+    According to the Bayes theorem: $P(c | k) = P(k | c) P(c)  /  ( \sum_{v \in dom P(c)}  P(k | c = v) P(c = v) )$
+    $P(c | k = m) = P(k = m | c) P(c)  /  (C_n^m  q^{n - m}  (1 - q)^{m}  p +  C_n^m  q^{m}  (1 - q)^{n - m}  (1 - p) )$
+    $P(c = 1 | k = m) = C_n^m  q^{n - m}  (1 - q)^{m}  p  /  (C_n^m  q^{n - m}  (1 - q)^{m}  p +  C_n^m  q^{m}  (1 - q)^{n - m}  (1 - p) ) = q^{n - m}  (1 - q)^{m} p  /  ( q^{n - m}  (1 - q)^{m} p  +  q^{m}  (1 - q)^{n - m}) (1 - p) )$
+
+    \href{http://www.sharelatex.com}{Something Linky}
+
+\end{document}

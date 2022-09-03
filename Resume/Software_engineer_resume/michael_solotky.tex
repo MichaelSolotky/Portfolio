@@ -1,0 +1,447 @@
+%-------------------------
+% Resume in Latex
+% Author  : Sourabh Bajaj
+% License : MIT
+%------------------------
+
+% Examples of other good resumes for reference:
+% 1. From Sergey Nemchinski's videos:
+% 1.1. https://youtu.be/-ghtEmXux5U?t=3343
+% 1.2. https://youtu.be/6ZmJ6pAi6Ds?t=6660
+% 1.3. https://youtu.be/k8knBXQkK0g?t=5737 (minimal details)
+% 1.4. https://youtu.be/jhnsjSCgtu0?t=2341
+% 2. The TechLead: https://youtu.be/xpaz7nrNmXA?t=587
+% 3. Clement Mihailescu: https://youtu.be/aKjsy-b00QM?t=806
+% 4. Mary Feofanova: https://github.com/mary3000/resume
+
+
+\documentclass[letterpaper,11pt]{article}
+% Global notes:
+% 1. Font
+% 1.a. Font size: I saw even smaller font in other resumes, so think about making it smaller
+% 1.b. Italic font style: the TechLead suggests to not use italic, and I think that a few italic is not that bad
+% 1.c. Bold font style: too much bold is not ok. In this resume now it's not too much, but just know about that
+% 2. Dates are shifted to the right and it could be inconvenient to read it
+
+%-------------------------
+% Use packages
+%-------------------------
+
+% blackboard math symbols
+\usepackage{amsfonts}
+% professional-quality tables
+\usepackage{booktabs}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+% add icons like LinkedIn or Email envelope, fontawesome and fontawesome5 are conflicting, only one can be imported
+%\usepackage{fontawesome}
+\usepackage{fontawesome5}
+% use 8-bit T1 fonts
+\usepackage[T1]{fontenc}
+\usepackage[empty]{fullpage}
+\usepackage[pdftex]{hyperref}
+% allow utf-8 input
+\usepackage[utf8]{inputenc}
+\usepackage{latexsym}
+% microtypography
+\usepackage{microtype}
+\usepackage{marvosym}
+% compact symbols for 1/2, etc.
+\usepackage{nicefrac}
+\usepackage{tikz}
+\usepackage{titlesec}
+% simple URL typesetting
+\usepackage{url}
+\usepackage{verbatim}
+\usepackage{xcolor}
+
+%-------------------------
+% Custom variables
+%-------------------------
+
+% One-line items are different from two-line ones because the skills are in the first line
+\newcommand\additionalSpaceBetweenOneLineItems{1pt}
+\newcommand\spaceAfterSubItems{6pt}
+\newcommand\spaceBeforeGDPRStatement{-6pt}
+\newcommand\spaceBetweenEducations{-6pt}
+\newcommand\spaceBetweenItemAndSubItem{-6pt}
+\newcommand\spaceBetweenLinesInEducation{-1pt}
+\newcommand\spaceBetweenLinesInHeading{-12pt}
+\newcommand\spaceBetweenOrdinarySubItems{-2pt}
+\newcommand\spaceBetweenResumeItems{-2pt}
+\newcommand\spaceBetweenResumeSebitems{-4pt}
+\newcommand\spaceBetweenSections{-12pt}
+\newcommand\spaceBetweenSubItemAndItem{-12pt}
+
+%-------------------------
+% Custom commands
+%-------------------------
+% Notes:
+% 1. There are the resumeItem and the resumeSubItem commands defined, but the items used in this resume are actually created using conventional itemize tools
+
+% Resume items
+\newcommand{\resumeItem}[2]{
+    \item\small{
+        \textbf{#1}{: #2 \vspace{\spaceBetweenResumeItems}}
+    }
+}
+
+% Text style for dates (e.g. textit, textbf, textnormal)
+\newcommand{\textDate}{\textit}
+
+\newcommand{\resumeSubheading}[4]{
+    \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & #2 \\
+        \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand\blfootnote[1]{ % footnote without numbers
+    \begingroup
+    \renewcommand\thefootnote{}\footnote{#1}%
+    \addtocounter{footnote}{-1}%
+    \endgroup
+}
+
+\newcommand{\resumeSubItem}[2]{
+    \resumeItem{#1}{#2}\vspace{\spaceBetweenResumeSebitems}
+}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\RomanNumeralCaps}[1]{\MakeUppercase{\romannumeral #1}}
+
+% Create special formatting skills
+\tikzset{rndblock/.style={rounded corners,rectangle,draw,outer sep=0pt}}
+\newcommand{\tframed}[2][]{\tikz[baseline=(h.base)]\node[rndblock,#1] (h) {\color{black}{#2}};}
+\newcommand*{\mystrut}{\rule[-0.2\baselineskip]{0pt}{0.8\baselineskip}}
+\newcommand{\skill}[1]{\tframed[lightgray]{\mystrut#1}}
+
+%-------------------------
+% Other settings
+%-------------------------
+
+\definecolor{linkcolor}{HTML}{0000FF} % colour of links
+\definecolor{urlcolor}{HTML}{0000FF} % colour of hyperlinks
+ 
+\hypersetup{
+    pdfstartview=FitH,
+    linkcolor=linkcolor,
+    urlcolor=urlcolor,
+    colorlinks=true
+}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{4.08003pt} % just to get rid of a warning
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+    \vspace{\spaceBetweenSections}
+    \scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+%----------HEADING-BEGIN----------
+% Notes:
+% 1. Think about adding your prone number as recruiters in Poland usually want to see it and even call them
+% 2. Think about a Telegram link as it could be convenient for recruiters to call me, and in this case I won't expose my phone number
+
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} c @{\extracolsep{\fill}} r}
+    \faLinkedinIn \enspace LinkedIn: \href{https://www.linkedin.com/in/michael-solotky/}{ michael-solotky}
+    &
+    \textbf{\LARGE
+        % note: here we decide which name: the legal one or the preferred one to display on top of the resume
+        % Michael Solotky
+        Mihail Solotchii
+    } \hspace{50pt}
+    &
+    \faMapMarker* \enspace Gdańsk, Poland \\
+\end{tabular*}
+\vspace{\spaceBetweenLinesInHeading}
+
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} c @{\extracolsep{\fill}} r}
+    \faEnvelope[regular] jawormichal128@gmail.com
+    &&
+    % Note: placeholder for a phone number
+    %\faTelegram \enspace Telegram:
+    % Note: placeholder for a telegram link
+    %\faPhone \enspace
+    \\
+\end{tabular*}
+
+%----------HEADING-END----------
+
+
+%----------EDUCATION-BEGIN----------
+% Notes:
+% 1. Think about moving it bellow (that's a usual recommendation for experienced engineers, although I'm not sure it applies to ML engineers)
+% 2. Think about removing bachelor's degree as you're a master, although these are different universities
+
+\section{Education}{}
+\resumeSubHeadingListStart
+
+% Master of Science
+\item{
+    \textbf{Master of Science} in \textbf{Applied Mathematics and Informatics}, GPA 3.90 / 4.0 % (9.23 / 10.0)
+    \hfill
+    \textDate{Sep 2019 -- Jun 2021}
+    \\
+    \vspace{\spaceBetweenLinesInEducation}
+    \textbf{\href{https://www.topuniversities.com/universities/hse-university-national-research-university-higher-school-economics}{\color{blue} Higher School of Economics} :}
+	\href{https://cs.hse.ru/en/}{\color{blue} Faculty of Computer Science}
+    \\
+    \vspace{\spaceBetweenLinesInEducation}
+    Joint programme with \href{https://yandexdataschool.com/}{\color{blue} \textbf{Yandex School of Data Science}}
+}
+
+% Bachelor of Science
+\vspace{\spaceBetweenEducations}
+\item{
+    Bachelor of Science in Applied Mathematics and Computer Science, GPA 3.89 / 4.0 % (4.89 / 5.0)
+    \hfill
+    \textDate{Sep 2015 -- Jun 2019}
+    \\
+    \vspace{\spaceBetweenLinesInEducation}
+    \textbf{\href{https://www.topuniversities.com/universities/lomonosov-moscow-state-university}{\color{blue} Lomonosov Moscow State University}}
+    \\
+    \vspace{\spaceBetweenLinesInEducation}
+    \href{https://www.msu.ru/en/info/struct/depts/vmc.html}{\color{blue} Faculty of Computational Mathematics and Cybernetics}
+}
+\resumeSubHeadingListEnd
+
+%----------EDUCATION-END----------
+
+
+%----------EXPERIENCE-BEGIN----------
+% Notes:
+% 1. Still not sure whether I should write what I was working on
+% 1.a. Put more numbers and clear measurable achievements in this section (Alexandra Chudinova says it's a must for the US and Canada: https://youtu.be/7aZSO8v58rE?t=3699, https://youtu.be/7aZSO8v58rE?t=7047)
+% 1.b. Sometimes people write what they were developing (projects)
+% 1.c. Writing about your duties (e.g. writing integ tests) is excessive because it's obvious from the job title
+% 2. Think about that mentioning irrelevant skills or writing too much about an irrelevant job position that you had could make it more difficult for a recruiter to decide whether to take you
+% Sources:
+% 2.1. The TechLead's video called "Ex-Googler Resume Tips for software engineers": (https://youtu.be/rCOgVQ8a1zs?t=137)
+% 2.2. Segrey Nemchinski's video called with resume analysis (https://youtu.be/J8k5TCa3UYA?t=645)
+% 2.3. Various people saying that it's bad to have one resume for all roles apparently suggesting that if you have multiple resumes you can remove irrelevant stuff from them
+% 3. Looks like it's ok to have gaps between different work positions (from a video of Sergey Nemchinski and Alexandra Chudinova: https://youtu.be/7aZSO8v58rE?t=6001)
+% 4. I believe that a short description of the projects would help to make a picture of what the person was doing (proofs: a Nemchinski's video https://youtu.be/jhnsjSCgtu0?t=1309, and I tried to read a resume sent by Yashasvi Singh and I understood that it's easier to read when you understand what the person was doing)
+% 5. A Google recruiter asked me about my responsibilities and the current job, looks like they might be different in different companies
+% 6. If there were many projects in a particular position it can be written like that "many various projects in X area" (the area should be mentioned), source: Nemchinski's video (https://youtu.be/jhnsjSCgtu0?t=4346)
+
+\section{Experience}
+\resumeSubHeadingListStart
+
+% Software Development Engineer at Amazon
+\item{
+    \textbf{Software Development Engineer at \href{https://www.aboutamazon.com/}{\color{blue} Amazon}}
+    \hfill
+    \textDate{Aug 2021 -- Present $\cdot$ 1yr} \\
+    \textbf{Alexa TextToSpeech}
+    \skill{C} \skill{C\textbf{\footnotesize++}} \skill{Python} \skill{Bash} \skill{Perl} \skill{CI/CD}
+}
+\vspace{\spaceBetweenItemAndSubItem}
+\begin{itemize}
+    % Note: this line could be an introduction to explain what I worked on
+    % \item{
+    %     Worked on various projects in text normalization for Speech Synthesis
+    % }
+    \item{
+        \textbf{Reduced latency} of a model for homograph disambiguation by \textbf{56\%}
+    }
+    \vspace{\spaceBetweenOrdinarySubItems}
+    % Note: think about removing this item as it's obvious about fixing bugs
+    \item{
+        \textbf{Urgently fixing bugs} with wrong pronunciation helping to \textbf{deliver projects on time}
+    }
+    \vspace{\spaceBetweenOrdinarySubItems}
+    \item{
+        Extended functionality of an internal library for integration testing in \\ Speech Synthesis \textbf{making it simple} to execute various new testing scenarios
+    }
+\end{itemize}
+\vspace{\spaceBetweenSubItemAndItem}
+\vspace{\additionalSpaceBetweenOneLineItems}
+
+% Research Science Intern at Yandex
+\item{
+    \textbf{Research Science Intern at \href{https://research.yandex.com/}{\color{blue} Yandex}} \skill{PyTorch} \skill{NumPy} \skill{Pyplot} \skill{\LaTeX}
+    \hfill
+    \textDate{Sep 2020 -- Jun 2021 $\cdot$ 9mo} \\
+}
+\vspace{\spaceBetweenItemAndSubItem}
+\vspace{\additionalSpaceBetweenOneLineItems}
+\begin{itemize}
+    \item{
+        Comparing existing methods for \textbf{uncertainty estimation} on large-scale tasks
+    }
+    \vspace{\spaceBetweenOrdinarySubItems}
+    \item{
+        Finding \textbf{theoretical foundations} for various methods of
+        uncertainty \\ estimation in \textbf{Deep Learning}
+    }
+    \vspace{\spaceBetweenOrdinarySubItems}
+    \item{
+        \textbf{Results} are described in the \href{https://www.hse.ru/en/ma/datasci/students/diplomas/472546359}{\textbf{Master's thesis}}
+    }
+\end{itemize}
+\vspace{\spaceBetweenSubItemAndItem}
+
+% Machine Learning Engineer Intern at Yandex
+\item{
+    \textbf{Machine Learning Engineer Intern at \href{https://yandex.com/company/}{\color{blue} Yandex}}
+    \hfill
+    \textDate{Jun 2019 -- Sep 2019 $\cdot$ 3mo} \\
+    \textbf{Machine Translation department} \skill{TensorFlow} \skill{MapReduce} \skill{SciPy} \skill{Pyplot}
+}
+\vspace{\spaceBetweenItemAndSubItem}
+\begin{itemize}
+    \item{
+        Conducted experiments to improve quality and diversity of translations
+    }
+    \vspace{\spaceBetweenOrdinarySubItems}
+    \item{
+        Analyzed baseline approaches and found some basic mistakes that they make
+    }
+    \vspace{\spaceBetweenOrdinarySubItems}
+    \item{
+        \textbf{Increased quality and diversity} by internal company's metrics and by \\ commonly used machine translation metrics: \textbf{10\% of max-\href{https://en.wikipedia.org/wiki/BLEU}{BLEU} growth} \\
+        and about \textbf{60\% of \href{https://github.com/geek-ai/Texygen/blob/master/docs/evaluation.md}{self-BLEU} diversity growth}
+    }
+    \vspace{\spaceBetweenOrdinarySubItems}
+    \item{
+        Implemented several models in company's internal machine learning library
+    }
+\end{itemize}
+\vspace{\spaceBetweenSubItemAndItem}
+\vspace{2pt} % For some reason this need to be added because without it the space is not the same as in similar cases above
+
+% Software Engineer Intern at Yandex
+\item{
+    \textbf{Software Engineer Intern at \href{https://yandex.com/company/}{\color{blue} Yandex}}
+    \hfill
+    \textDate{Jun 2018 -- Oct 2018 $\cdot$ 3mo} \\
+    \textbf{Voice Technology department} \skill{C\textbf{\footnotesize++}} \skill{Python} \skill{MapReduce} \skill{Protobuf}
+}
+\vspace{\spaceBetweenItemAndSubItem}
+\begin{itemize}
+    \item{
+        Implemented several methods of probability smoothing in language models for \\ Automatic Speech Recognition
+    }
+    \vspace{\spaceBetweenOrdinarySubItems}
+    \item{
+        Conducted experiments on quality measurement to find the best model among all
+    }
+    \vspace{\spaceBetweenOrdinarySubItems}
+    \item{
+        Implemented an optimal algorithm for training n-gram language models in C\textbf{\footnotesize++} using \\ MapReduce which \textbf{reduced training time by 3 times and slightly increased quality}
+    }
+\end{itemize}
+
+\resumeSubHeadingListEnd
+
+%----------EXPERIENCE-END----------
+
+
+%----------PROJECTS-BEGIN----------
+% Notes:
+% 1. Think about removing this section
+% 1.1 Sergey Nemchinski in his video (https://youtu.be/2zps16PJA1k?t=707) had doubts about adding projects if a person already has 1 year of experience. Like it's not necessary, but also adds, so maybe not a problem. Most likely now it can be left, but you can remove this section when adding the next job
+
+\section{Projects}
+\resumeSubHeadingListStart
+
+% BigARTM
+\vspace{-2pt} % not sure if necessary, it just looks ok with it
+\item{
+    \textbf{\href{https://github.com/bigartm/bigartm}{\color{blue} BigARTM}}
+    \skill{C\textbf{\footnotesize++}} \skill{Boost} \skill{Protobuf} \skill{Travis CI} \skill{AppVeyor}
+    \hfill
+    \textDate{Jan 2017 -- Jun 2018} \\
+    \vspace{2pt} % added to have normal space between the skills and the next line
+    \textbf{Open Source library for topic modelling} \\
+    Developed a tool for parallel calculation of pairwise word statistics (\textbf{\href{https://github.com/MichaelSolotky/bigartm/blob/master/src/artm/core/cooccurrence_collector.cc}{code sample}, \href{https://bigartm.readthedocs.io/en/stable/tutorials/bigartm_cli.html}{documentation}})
+}
+
+\resumeSubHeadingListEnd
+
+%----------PROJECTS-END----------
+
+
+%----------SKILLS-BEGIN----------
+% Notes:
+% 1. Think about moving it above, even higher than the Experience section
+% 1.1 I remember a recommendation from Google recruiters to put programming languages at the top and from Sergey Nemchinski to put all the skills at the top, followed by Experience and only then followed by Education
+% 1.2. At the same time Clement Mihailescu also put the Skills at the bottom (although he was experienced by that time), source: "The Resume That Got Me Into Google (software engineer resume tips)" (https://youtu.be/aKjsy-b00QM?t=806)
+% 1.3. At the same time the TechLead didn't summarize his skills at all in his resume, source: "7 Tips for the Coding Resume (for Software Engineers)" (https://youtu.be/xpaz7nrNmXA?t=587)
+% 2. Think about removing some irrelevant skills (or at least moving them to the ends of respective lines), see more in the notes to the Experience section
+% 2.1. Idea: a person who knows everything actually doesn't know anything, took it from Sergey Nemchinski's video (https://youtu.be/mi0mRDIL_z8?t=7816)
+% 3. Think about adding soft skills here: scrum, public speaking
+% 3.1. Public speaking for example was proposed by Sergey Nemchinki (I don't remember the source), but also he said together with Alisa Yeremenko that one shouldn't list soft skills in a resume cos this is something recruiters find during an interview (source: https://youtu.be/-ghtEmXux5U?t=1118)
+% 4. Maybe the "Technologies/Libraries" item can be split or merged with "Tools" as now the sub-items in those two items are really similar
+
+\section{Skills}
+\resumeSubHeadingListStart
+
+% Note: the only reason why sub-items are used instead of items is that they provide good spacing out-of-the-box
+\resumeSubItem{Languages}{C\textbf{\footnotesize++}, Python, C, Bash, Perl}
+\resumeSubItem{Deep Learning frameworks}{PyTorch, TensorFlow, Keras}
+\resumeSubItem{Technologies/Libraries}{MapReduce, Protobuf, 
+    C\textbf{\footnotesize++} Boost, Make, NumPy/SciPy, Sklearn, Pandas,
+    CVXPY
+}
+\resumeSubItem{Tools}{Git, UNIX/Linux, GDB, Docker, \LaTeX,
+    Deployment Pipelines (CI/CD), Travis CI, AppVeyor
+}
+
+% Usually sections consist of resume items, but this one consists of resume sub items
+% Spaces between sub items are smaller, so to compensate this loss of space it's added manually
+\vspace{\spaceAfterSubItems}
+
+\resumeSubHeadingListEnd
+
+%----------SKILLS-END----------
+
+
+%----------GDPR-BEGIN----------
+% Consent to personal data processing in accordance with the GDPR
+% Notes:
+% 1. Most likely not needed outside of EU (not sure about UK)
+% 1. Possibly there could be a smaller statement, you can try to find it
+
+\vspace{\spaceBeforeGDPRStatement} % Remove some space as by default the shift before this statement is too big
+\blfootnote{\fontsize{8pt}{8pt}\selectfont
+    I hereby give consent for my personal data included in the application to be processed for the purposes of the recruitment process in accordance with Art. 6 paragraph 1 letter a of the Regulation of the European Parliament and of the Council (EU) 2016/679 of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation).
+}
+
+%----------GDPR-END----------
+
+
+\end{document}
