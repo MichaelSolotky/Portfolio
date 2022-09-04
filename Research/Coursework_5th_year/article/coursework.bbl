@@ -1,0 +1,57 @@
+\begin{thebibliography}{}
+
+\bibitem[Holtzman et~al., 2019]{nucleus-sampling}
+Holtzman, A., Buys, J., Forbes, M., and Choi, Y. (2019).
+\newblock The curious case of neural text degeneration.
+
+\bibitem[Kumar and Sarawagi, 2019]{calibration}
+Kumar, A. and Sarawagi, S. (2019).
+\newblock Calibration of encoder decoder models for neural machine translation.
+
+\bibitem[Ott et~al., 2018]{analyzing-uncertainty}
+Ott, M., Auli, M., Grangier, D., and Ranzato, M. (2018).
+\newblock Analyzing uncertainty in neural machine translation.
+\newblock {\em ICML}, pages 3953--3962.
+
+\bibitem[Papineni et~al., 2002]{bleu}
+Papineni, K., Roukos, S., Ward, T., and Zhu, W.-J. (2002).
+\newblock {B}leu: a method for automatic evaluation of machine translation.
+\newblock In {\em Proceedings of the 40th Annual Meeting of the Association for
+  Computational Linguistics}, pages 311--318, Philadelphia, Pennsylvania, USA.
+  Association for Computational Linguistics.
+
+\bibitem[Sulem et~al., 2018]{bleu-critics}
+Sulem, E., Abend, O., and Rappoport, A. (2018).
+\newblock {BLEU} is not suitable for the evaluation of text simplification.
+\newblock In {\em Proceedings of the 2018 Conference on Empirical Methods in
+  Natural Language Processing}, pages 738--744, Brussels, Belgium. Association
+  for Computational Linguistics.
+
+\bibitem[Vaswani et~al., 2017]{attention}
+Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.~N.,
+  Kaiser, L.~u., and Polosukhin, I. (2017).
+\newblock Attention is all you need.
+\newblock In Guyon, I., Luxburg, U.~V., Bengio, S., Wallach, H., Fergus, R.,
+  Vishwanathan, S., and Garnett, R., editors, {\em Advances in Neural
+  Information Processing Systems 30}, pages 5998--6008. Curran Associates, Inc.
+
+\bibitem[Vijayakumar et~al., 2016]{diverse-beam}
+Vijayakumar, A.~K., Cogswell, M., Selvaraju, R.~R., Sun, Q., Lee, S., Crandall,
+  D.~J., and Batra, D. (2016).
+\newblock Diverse beam search: Decoding diverse solutions from neural sequence
+  models.
+\newblock {\em CoRR}, abs/1610.02424.
+
+\bibitem[Wu et~al., 2016]{GNMT}
+Wu, Y., Schuster, M., Chen, Z., Le, Q., Norouzi, M., Macherey, W., Krikun, M.,
+  Cao, Y., Gao, Q., Macherey, K., Klingner, J., Shah, A., Johnson, M., Liu, X.,
+  Kaiser, u., Gouws, S., Kato, Y., Kudo, T., Kazawa, H., and Dean, J. (2016).
+\newblock Google's neural machine translation system: Bridging the gap between
+  human and machine translation.
+
+\bibitem[Zhu et~al., 2018]{self-bleu}
+Zhu, Y., Lu, S., Zheng, L., Guo, J., Zhang, W., Wang, J., and Yu, Y. (2018).
+\newblock Texygen: A benchmarking platform for text generation models.
+\newblock pages 1097--1100.
+
+\end{thebibliography}
