@@ -80,7 +80,7 @@
 \newcommand\spaceBetweenResumeItems{-2pt}
 \newcommand\spaceBetweenResumeSebitems{-4pt}
 \newcommand\spaceBetweenSections{-12pt}
-\newcommand\spaceBetweenSubItemAndItem{-12pt}
+\newcommand\spaceBetweenSubItemAndItem{-10pt}
 
 %-------------------------
 % Custom commands
@@ -182,6 +182,7 @@
 % Notes:
 % 1. Think about adding your phone number as recruiters in Poland usually want to see it and even call them
 % 2. Think about a Telegram link as it could be convenient for recruiters to call me, and in this case, I won't expose my phone number
+% 3. Think about adding work authorization status (maybe once get EU citizenship)
 
 \begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} c @{\extracolsep{\fill}} r}
     \faLinkedinIn \enspace LinkedIn: \href{https://www.linkedin.com/in/michal-slodki/}{ michal-slodki}
@@ -209,44 +210,41 @@
 %----------HEADING-END----------
 
 
-%----------EDUCATION-BEGIN----------
+%----------SKILLS-BEGIN----------
 % Notes:
-% 1. Think about moving it below (that's a usual recommendation for experienced engineers, although I'm not sure it applies to ML engineers)
-% 2. Think about removing the bachelor's degree as you're a master, although these are different universities
+% 1. Think about moving it above, even higher than the Experience section
+% 1.1 I remember a recommendation from Google recruiters to put programming languages at the top and from Sergey Nemchinski to put all the skills at the top, followed by Experience and only then followed by Education
+% 1.2. At the same time, Clement Mihailescu also put the Skills at the bottom (although he was experienced by that time), source: "The Resume That Got Me Into Google (software engineer resume tips)" (https://youtu.be/aKjsy-b00QM?t=806)
+% 1.3. At the same time, the TechLead didn't summarize his skills at all in his resume, source: "7 Tips for the Coding Resume (for Software Engineers)" (https://youtu.be/xpaz7nrNmXA?t=587)
+% 2. Think about removing some irrelevant skills (or at least moving them to the ends of respective lines), see more in the notes to the Experience section
+% 2.1. Idea: a person who knows everything actually doesn't know anything, took it from Sergey Nemchinski's video (https://youtu.be/mi0mRDIL_z8?t=7816)
+% 3. Think about adding soft skills here: scrum, public speaking
+% 3.1. Public speaking for example was proposed by Sergey Nemchinki (I don't remember the source), but also he said together with Alisa Yeremenko that one shouldn't list soft skills in a resume cos this is something recruiters find during an interview (source: https://youtu.be/-ghtEmXux5U?t=1118)
+% 4. Maybe the "Technologies/Libraries" item can be split or merged with "Tools" as now the sub-items in those two items are really similar
 
-\section{Education}{}
+\section{Skills}
 \resumeSubHeadingListStart
 
-% Master of Science
-\item{
-    \textbf{Master of Science} in \textbf{Applied Mathematics and Informatics}, GPA 3.90 / 4.0 % (9.23 / 10.0)
-    \hfill
-    \textDate{Sep 2019 -- Jun 2021}
-    \\
-    \vspace{\spaceBetweenLinesInEducation}
-    \textbf{\href{https://www.topuniversities.com/universities/hse-university-national-research-university-higher-school-economics}{\color{blue} Higher School of Economics} :}
-	\href{https://cs.hse.ru/en/}{\color{blue} Faculty of Computer Science}
-    \\
-    \vspace{\spaceBetweenLinesInEducation}
-    Joint programme with \href{https://yandexdataschool.com/}{\color{blue} \textbf{Yandex School of Data Science}}
+% Note: the only reason why sub-items are used instead of items is that they provide good spacing out-of-the-box
+% A suggestion from Nemchinski (https://www.youtube.com/live/VscDaW81Y-Y?feature=share&t=3017) to remove names of sub-items, like it's clear anyway that C++ is a language and so on
+% A suggestion mentioned in Nemchinski's video (https://www.youtube.com/live/VscDaW81Y-Y?feature=share&t=1219) by Veronica Kosiak is to put the skills on top of the resume to simplify the job of a recruiter cos they first look at the skills to match them with the position description
+\resumeSubItem{Languages}{C\textbf{\footnotesize++}, C, Python, Perl}
+\resumeSubItem{Deep Learning frameworks}{PyTorch, TensorFlow, Keras}
+\resumeSubItem{Technologies/Libraries}{MapReduce, Protobuf, 
+    C\textbf{\footnotesize++} Boost, Make, NumPy/SciPy, Sklearn, Pandas,
+    CVXPY
+}
+\resumeSubItem{Tools}{Git, UNIX/Linux, Docker, GDB, Valgrind, \LaTeX,
+    Deployment Pipelines (CI/CD), Travis CI, AppVeyor
 }
 
-% Bachelor of Science
-\vspace{\spaceBetweenEducations}
-\item{
-    Bachelor of Science in Applied Mathematics and Computer Science, GPA 3.89 / 4.0 % (4.89 / 5.0)
-    \hfill
-    \textDate{Sep 2015 -- Jun 2019}
-    \\
-    \vspace{\spaceBetweenLinesInEducation}
-    \textbf{\href{https://www.topuniversities.com/universities/lomonosov-moscow-state-university}{\color{blue} Lomonosov Moscow State University}}
-    \\
-    \vspace{\spaceBetweenLinesInEducation}
-    \href{https://www.msu.ru/en/info/struct/depts/vmc.html}{\color{blue} Faculty of Computational Mathematics and Cybernetics}
-}
+% Usually sections consist of resume items, but this one consists of resume sub-items
+% Spaces between sub-items are smaller, so to compensate for this loss of space it's added manually
+\vspace{\spaceAfterSubItems}
+
 \resumeSubHeadingListEnd
 
-%----------EDUCATION-END----------
+%----------SKILLS-END----------
 
 
 %----------EXPERIENCE-BEGIN----------
@@ -257,6 +255,8 @@
 % 1.c. Writing about your duties (e.g. writing integ tests) is excessive because it's obvious from the job title
 % 2. Think about mentioning irrelevant skills or writing too much about an irrelevant job position that you had could make it more difficult for a recruiter to decide whether to take you
 % 3. Put the total years of experience near the Experience tab to quickly attract the recruiter's attention
+% 4. Think about putting locations of places where you worked
+
 % Sources:
 % 2.1. The TechLead's video called "Ex-Googler Resume Tips for software engineers": (https://youtu.be/rCOgVQ8a1zs?t=137)
 % 2.2. Sergey Nemchinski's video called with resume analysis (https://youtu.be/J8k5TCa3UYA?t=645)
@@ -274,11 +274,21 @@
     \textbf{Software Engineer at \href{https://research.samsung.com/srpol}{\color{blue} Samsung R\&D Center}}
     \hfill
     \textDate{Feb 2023 -- present} \\ %$\cdot$ 0mo} \\
-    \textbf{Visual Display team}
-    \skill{C\textbf{\footnotesize++}}
+    \textbf{Visual Display group}
+    \skill{C\textbf{\footnotesize++}} \skill{C} \skill{GDB} \skill{Valgrind}
 }
 \vspace{\spaceBetweenItemAndSubItem}
-\vspace{\additionalSpaceBetweenOneLineItems}
+\begin{itemize}
+    % Note: this line could be an introduction to explain what I worked on
+    \item{
+        ToDo: fill in later
+    }
+    \vspace{\spaceBetweenOrdinarySubItems}
+    \item{
+        ToDo: fill in later
+    }
+\end{itemize}
+\vspace{\spaceBetweenSubItemAndItem}
 
 % Software Development Engineer at Amazon
 \item{
@@ -286,7 +296,7 @@
     \hfill
     \textDate{Aug 2021 -- Aug 2022 $\cdot$ 1yr} \\
     \textbf{Alexa TextToSpeech}
-    \skill{C} \skill{C\textbf{\footnotesize++}} \skill{Python} \skill{Bash} \skill{Perl} \skill{CI/CD}
+    \skill{C\textbf{\footnotesize++}} \skill{C} \skill{Python} \skill{Perl} \skill{CI/CD}
 }
 \vspace{\spaceBetweenItemAndSubItem}
 \begin{itemize}
@@ -334,6 +344,8 @@
     }
 \end{itemize}
 \vspace{\spaceBetweenSubItemAndItem}
+\vspace{-2pt} % for some reason (probably a broken alignment) this is necessary for indentations to look he same
+
 
 % Machine Learning Engineer Intern at Yandex
 \item{
@@ -356,13 +368,8 @@
         \textbf{Increased quality and diversity} by internal company's metrics and by \\ commonly used machine translation metrics: \textbf{10\% of max-\href{https://en.wikipedia.org/wiki/BLEU}{BLEU} growth} \\
         and about \textbf{60\% of \href{https://github.com/geek-ai/Texygen/blob/master/docs/evaluation.md}{self-BLEU} diversity growth}
     }
-    \vspace{\spaceBetweenOrdinarySubItems}
-    \item{
-        Implemented several models in the company's internal machine learning library
-    }
 \end{itemize}
 \vspace{\spaceBetweenSubItemAndItem}
-\vspace{2pt} % For some reason this need to be added because without it the space is not the same as in similar cases above
 
 % Software Engineer Intern at Yandex
 \item{
@@ -375,10 +382,6 @@
 \begin{itemize}
     \item{
         Implemented several methods of probability smoothing in language models for \\ Automatic Speech Recognition
-    }
-    \vspace{\spaceBetweenOrdinarySubItems}
-    \item{
-        Conducted experiments on quality measurement to find the best model among all
     }
     \vspace{\spaceBetweenOrdinarySubItems}
     \item{
@@ -416,41 +419,44 @@
 %----------PROJECTS-END----------
 
 
-%----------SKILLS-BEGIN----------
+%----------EDUCATION-BEGIN----------
 % Notes:
-% 1. Think about moving it above, even higher than the Experience section
-% 1.1 I remember a recommendation from Google recruiters to put programming languages at the top and from Sergey Nemchinski to put all the skills at the top, followed by Experience and only then followed by Education
-% 1.2. At the same time, Clement Mihailescu also put the Skills at the bottom (although he was experienced by that time), source: "The Resume That Got Me Into Google (software engineer resume tips)" (https://youtu.be/aKjsy-b00QM?t=806)
-% 1.3. At the same time, the TechLead didn't summarize his skills at all in his resume, source: "7 Tips for the Coding Resume (for Software Engineers)" (https://youtu.be/xpaz7nrNmXA?t=587)
-% 2. Think about removing some irrelevant skills (or at least moving them to the ends of respective lines), see more in the notes to the Experience section
-% 2.1. Idea: a person who knows everything actually doesn't know anything, took it from Sergey Nemchinski's video (https://youtu.be/mi0mRDIL_z8?t=7816)
-% 3. Think about adding soft skills here: scrum, public speaking
-% 3.1. Public speaking for example was proposed by Sergey Nemchinki (I don't remember the source), but also he said together with Alisa Yeremenko that one shouldn't list soft skills in a resume cos this is something recruiters find during an interview (source: https://youtu.be/-ghtEmXux5U?t=1118)
-% 4. Maybe the "Technologies/Libraries" item can be split or merged with "Tools" as now the sub-items in those two items are really similar
+% 1. Think about moving it below (that's a usual recommendation for experienced engineers, although I'm not sure it applies to ML engineers)
+% 2. Think about removing the bachelor's degree as you're a master, although these are different universities
 
-\section{Skills}
+\section{Education}{}
 \resumeSubHeadingListStart
 
-% Note: the only reason why sub-items are used instead of items is that they provide good spacing out-of-the-box
-% A suggestion from Nemchinski (https://www.youtube.com/live/VscDaW81Y-Y?feature=share&t=3017) to remove names of sub-items, like it's clear anyway that C++ is a language and so on
-% A suggestion mentioned in Nemchinski's video (https://www.youtube.com/live/VscDaW81Y-Y?feature=share&t=1219) by Veronica Kosiak is to put the skills on top of the resume to simplify the job of a recruiter cos they first look at the skills to match them with the position description
-\resumeSubItem{Languages}{C\textbf{\footnotesize++}, Python, C, Bash, Perl}
-\resumeSubItem{Deep Learning frameworks}{PyTorch, TensorFlow, Keras}
-\resumeSubItem{Technologies/Libraries}{MapReduce, Protobuf, 
-    C\textbf{\footnotesize++} Boost, Make, NumPy/SciPy, Sklearn, Pandas,
-    CVXPY
-}
-\resumeSubItem{Tools}{Git, UNIX/Linux, GDB, Docker, \LaTeX,
-    Deployment Pipelines (CI/CD), Travis CI, AppVeyor
+% Master of Science
+\item{
+    \textbf{Master of Science} in \textbf{Applied Mathematics and Informatics}, GPA 3.90 / 4.0 % (9.23 / 10.0)
+    \hfill
+    \textDate{Sep 2019 -- Jun 2021}
+    \\
+    \vspace{\spaceBetweenLinesInEducation}
+    \textbf{\href{https://www.topuniversities.com/universities/hse-university-national-research-university-higher-school-economics}{\color{blue} Higher School of Economics} :}
+	\href{https://cs.hse.ru/en/}{\color{blue} Faculty of Computer Science}
+    \\
+    \vspace{\spaceBetweenLinesInEducation}
+    Joint programme with \href{https://yandexdataschool.com/}{\color{blue} \textbf{Yandex School of Data Science}}
 }
 
-% Usually sections consist of resume items, but this one consists of resume sub-items
-% Spaces between sub-items are smaller, so to compensate for this loss of space it's added manually
-\vspace{\spaceAfterSubItems}
-
+% Bachelor of Science
+\vspace{\spaceBetweenEducations}
+\item{
+    Bachelor of Science in Applied Mathematics and Computer Science, GPA 3.89 / 4.0 % (4.89 / 5.0)
+    \hfill
+    \textDate{Sep 2015 -- Jun 2019}
+    \\
+    \vspace{\spaceBetweenLinesInEducation}
+    \textbf{\href{https://www.topuniversities.com/universities/lomonosov-moscow-state-university}{\color{blue} Lomonosov Moscow State University}}
+    \\
+    \vspace{\spaceBetweenLinesInEducation}
+    \href{https://www.msu.ru/en/info/struct/depts/vmc.html}{\color{blue} Faculty of Computational Mathematics and Cybernetics}
+}
 \resumeSubHeadingListEnd
 
-%----------SKILLS-END----------
+%----------EDUCATION-END----------
 
 
 %----------GDPR-BEGIN----------
